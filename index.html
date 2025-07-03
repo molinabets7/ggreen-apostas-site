@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GGREEN Apostas</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+    .login, .mural { max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 10px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="login" id="login">
+    <h2>Entrar no Grupo</h2>
+    <input id="senha" type="password" placeholder="Senha de acesso" />
+    <button onclick="entrar()">Entrar</button>
+    <p id="erro" style="color:red;"></p>
+  </div>
+  <div class="mural hidden" id="mural">
+    <h2>Mural de Sinais</h2>
+    <ul id="sinais">
+      <li>⚽ 1º Tempo: +1.5 Gols (Time A vs Time B)</li>
+      <li>🏀 Total pontos acima de 170 (Time X vs Time Y)</li>
+      <li>⚽ Escanteios: +8.5 FT</li>
+    </ul>
+  </div>
+  <script>
+    const senhaCorreta = "ggreen2025";
+    function entrar() {
+      const senha = document.getElementById("senha").value;
+      if (senha === senhaCorreta) {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("mural").classList.remove("hidden");
+      } else {
+        document.getElementById("erro").innerText = "Senha incorreta!";
+      }
+    }
+  </script>
+</body>
+</html>
